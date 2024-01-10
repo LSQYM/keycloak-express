@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Keycloak Project</title>
+	</head>
+	<body>
+		<h1>Home</h1>
+		<%
+		try {
+			if (user) {
+		%>
+				<p><%= user.name %></p>
+
+		<button>
+			<a href="/ue01">UE01</a>
+		</button>
+				<button>
+					<a href="/ue02">UE02</a>
+				</button>
+				<button>
+					<a href="/ue03">UE03</a>
+				</button>
+
+		<% } else { %>
+				<p>Please Login</p>
+			<% } %>
+		<%
+		} catch (e) {
+			console.error('Error: ', e);
+			%>
+				<p>Please Login</p>
+		<% } %>
+	</body>
+</html>
